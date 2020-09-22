@@ -39,16 +39,16 @@
 <!--End Loading Screen-->
 
 <!--Start NavBar-->
-<!--<nav class="navbar navbar-light bg-light">-->
-<!--    <a class="navbar-brand" href="#">-->
-<!--        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">-->
-<!--        Movies Projects-->
-<!--    </a>-->
-<!--</nav>-->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Movies Projects
+    </a>
+</nav>
 <!--End NavBar-->
 
 <!--Start Input form-->
-<form>
+<form id="add-movie-container" class="add-movie-container" method="post">
     <div class="form-group">
         <label for="movieTitle">Movie Title</label>
         <input type="text" class="form-control" id="movieTitle" aria-describedby="">
@@ -68,6 +68,7 @@
     <button type="submit" class="btn btn-primary" id="addMovie">Submit</button>
 </form>
 <!--End Input form-->
+<h1 id="reset"></h1>
 
 <!--Allow users to add new movies-->
 <!--Todo: Create a form for adding a new movie that has fields for the movie's title and rating-->
