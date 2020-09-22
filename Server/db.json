@@ -1,0 +1,34 @@
+{
+  "movies": [
+    {
+      "id": 8,
+      "title": "Sit praesentium qua",
+      "rating": "4"
+    },
+    {
+      "id": 13,
+      "title": "Odio et non laborum ",
+      "rating": "3"
+    },
+    {
+      "id": 17,
+      "title": "Eum doloribus rem dis",
+      "rating": "5"
+    },
+    {
+      "title": "fer",
+      "rating": "3",
+      "id": 18
+    },
+    {
+      "title": "tw",
+      "rating": "2",
+      "id": 19
+    },
+    {
+      "title": "fer",
+      "rating": "4",
+      "id": 21
+    }
+  ]
+}
