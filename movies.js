@@ -13,12 +13,19 @@ $(document).ready(function () {
 		fetch(url)
 			.then(response => response.json())
 			.catch(error => console.log(error))
-			// .then(data => console.log(data))
+			// .then(info => console.log(info))
 			.then(data => {
 				let output = ''
 				for (let i = 0; i < data.length; i++) {
 					output += `
-						<p>${data[i].id}</p>
+						<div class="card col-3">
+							<div class="container">
+							<h3>${data[i].title}</h3>
+							<p>${data[i].year}</p>
+							<p>${data[i].rating}</p>
+							<button type="button">Remove</button>
+							</div>
+						</div>
 					`
 					movieList.html(output);
 				}
