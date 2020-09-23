@@ -1,34 +1,136 @@
 {
   "movies": [
     {
+      "id": 1,
+      "title": "Citizen Cain",
+      "rating": "4",
+      "date": "1941"
+    },
+    {
+      "id": 2,
+      "title": "Casablanca",
+      "rating": "5",
+      "date": "1942"
+    },
+    {
+      "id": 3,
+      "title": "The Godfather",
+      "rating": "5",
+      "date": "1972"
+    },
+    {
+      "id": 4,
+      "title": "Gone With the Wind",
+      "rating": "4",
+      "date": "1939"
+    },
+    {
+      "id": 5,
+      "title": "Lawrence of Arabia",
+      "rating": "5",
+      "date": "1962"
+    },
+    {
+      "id": 6,
+      "title": "The Wizard of Oz",
+      "rating": "5",
+      "date": "1939"
+    },
+    {
+      "id": 7,
+      "title": "The Graduate",
+      "rating": "2",
+      "date": "1967"
+    },
+    {
       "id": 8,
-      "title": "Sit praesentium qua",
-      "rating": "4"
+      "title": "On the Waterfront",
+      "rating": "4",
+      "date": "1954"
+    },
+    {
+      "id": 9,
+      "title": "Schindler's List",
+      "rating": "4",
+      "date": "1993"
+    },
+    {
+      "id": 10,
+      "title": "Singing in the rain",
+      "rating": "4",
+      "date": "1952"
+    },
+    {
+      "id": 11,
+      "title": "It's A Wonderful Life",
+      "rating": "4",
+      "date": "1946"
+    },
+    {
+      "id": 12,
+      "title": "Sunset Blvd",
+      "rating": "5",
+      "date": "1950"
     },
     {
       "id": 13,
-      "title": "Odio et non laborum ",
-      "rating": "3"
+      "title": "The Bridge on the River Kwai",
+      "rating": "4",
+      "date": "1957"
     },
+    {
+      "id": 14,
+      "title": "Some Like It Hot",
+      "rating": "4",
+      "date": "1959"
+    },
+    {
+      "id": 15,
+      "title": "Star Wars",
+      "rating": "4",
+      "date": "1977"
+    }
+    {
+      "id": 16,
+      "title": "All About Eve",
+      "rating": "4",
+      "date": "1950"
+    }
     {
       "id": 17,
-      "title": "Eum doloribus rem dis",
-      "rating": "5"
-    },
-    {
-      "title": "fer",
-      "rating": "3",
-      "id": 18
-    },
-    {
-      "title": "tw",
-      "rating": "2",
-      "id": 19
-    },
-    {
-      "title": "fer",
+      "title": "The African Queen",
       "rating": "4",
-      "id": 21
+      "date": "1951"
+    }
+    {
+      "id": 18,
+      "title": "P",
+      "rating": "",
+      "date": ""
+    }
+    {
+      "id": ,
+      "title": "",
+      "rating": "",
+      "date": ""
+    }
+    {
+      "id": ,
+      "title": "",
+      "rating": "",
+      "date": ""
+    }
+    {
+      "id": ,
+      "title": "",
+      "rating": "",
+      "date": ""
+    }
+    {
+      "id": ,
+      "title": "",
+      "rating": "",
+      "date": ""
     }
   ]
 }
