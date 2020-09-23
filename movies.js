@@ -10,30 +10,58 @@ $(document).ready(function () {
 // addData.append("name", $("#movieDate").val())
 // addData.append("name", $("#rating").val())
 
-$('form').submit(function (event) {
-	event.preventDefault();
+	$('form').submit(function (event) {
+		event.preventDefault();
 
-	let title = $("#movieTitle").val();
-	let date = $("#movieDate").val();
-	let rating = $("#rating").val();
-	console.log(`${title} ${date} ${rating}`);
-})
+		let title = $("#movieTitle").val();
+		let date = $("#movieDate").val();
+		let rating = $("#rating").val();
+		console.log(`${title} ${date} ${rating}`);
+	})
 
-//		// const reviewObj = {
-// 		// 	restaurant_id: i,
-// 		// 	name: 'Codey',
-// 		// 	rating: 5,
-// 		// 	comments: "This is a really good place for coding and eating"
-// 		// }
-//
-// const url = 'https://codeup-restful-example.glitch.me/reviews';
-// const options = {
-// 	method: 'POST',
-// 	headers: {
-// 		'Content-Type': 'application/json',
-// 	},
-// 	body: JSON.stringify(reviewObj),
+
 // };
 // fetch(url, options)
 // 		.then( response => console.log(response) ) /* review was created successfully */
 // 		.catch( error => console.error(error) ); /* handle errors */
+
+
+// Single iteration card
+	let movieCard = function (data) {
+		let movieCard = '';
+		movieCard += `<div class="card bg-secondary text-white p-3">
+    							    <div class="col">
+									      <h4>Title: ${data.title}</h4>
+									 	  	<p>Rating: ${data.rating}</p>
+									 		</div>`;
+		document.getElementById("output").innerHTML = movieCard;
+	}
+
+	$('#addMovieBtn').click(function () {
+		let title = $("#addMovieTitle").val();
+		let date = $("#addMovieDate").val();
+		let rating = $("#addRating").val();
+		let idIteration = 0;
+		postMovie(title, date, rating, idIteration);
+	})
+
+
+	let postMovie = function (data) {
+		const reviewObj = {
+			id: idIteration,
+			name: `${title}`,
+			date: `${date}`,
+			rating: `${rating}`
+		}
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(reviewObj),
+		}
+		fetch(url, options)
+				.then(response => console.log(response)) /* review was created successfully */
+				.catch(error => console.error(error)); /* handle errors */
+	}
+})

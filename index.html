@@ -39,12 +39,15 @@
 <!--End Loading Screen-->
 
 <!--Start NavBar-->
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        Movies Projects
-    </a>
-</nav>
+    <nav class="navbar navbar-light bg-light navbar-container">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="#">
+                <img src="movie-logo2.jpg" width="75" height="75" class="d-inline-block align-top" alt="" loading="lazy">
+                <h1>Movies Projects</h1>
+            </a>
+        </div>
+    </nav>
+
 <!--End NavBar-->
 
 <!--Start Input form-->
@@ -54,18 +57,18 @@
         <input type="text" class="form-control" id="movieTitle" aria-describedby="">
     </div>
     <div class="form-group">
-        <label for="movieDate">Year released</label>
-        <input type="number" class="form-control" id="movieDate" aria-describedby="">
+        <label for="addMovieDate">Year released</label>
+        <input type="number" class="form-control" id="addMovieDate" aria-describedby="">
     </div>
-    <label for="rating">Example select</label>
-    <select class="form-control" id="rating">
+    <label for="addMovieTitle">Example select</label>
+    <select class="form-control" id="addMovieTitle">
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
         <option>5</option>
     </select>
-    <button type="submit" class="btn btn-primary" id="addMovie">Submit</button>
+    <button type="submit" class="btn btn-primary" id="addMovieBtn">Submit</button>
 </form>
 <!--End Input form-->
 <h1 id="reset"></h1>

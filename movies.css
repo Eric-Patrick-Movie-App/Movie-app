@@ -6,6 +6,12 @@ body {
     background-color: grey;
 }
 
+.navbar-container {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .add-movie-container {
     display: flex;
     flex-direction: column;
