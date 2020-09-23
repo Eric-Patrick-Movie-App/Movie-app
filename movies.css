@@ -194,5 +194,16 @@ footer a {
 
 #movie-list img {
     width: 100%;
+    border: 1px solid slategray;
 }
 
+#remove-btn {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+#remove-btn:hover {
+    background-color: indianred;
+    color: white;
+}
