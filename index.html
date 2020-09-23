@@ -20,22 +20,18 @@
 <!--Todo: Make an AJAX request to get a listing of all the movies-->
 <!--Todo: When the initial AJAX request comes back, remove the "loading..." message and replace it with HTML generated from the json response your code receives-->
 <!--Start Loading Screen-->
-<!--<script>-->
-<!--	$(window).on("load", function () {-->
-<!--		$("#loader-wrapper").fadeOut("slow")-->
-<!--	})-->
-<!--</script>-->
-<!--<div id="loader-wrapper">-->
-<!--    <div class="wrapper">-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <span>Loading</span>-->
-<!--    </div>-->
-<!--</div>-->
+
+<div id="loader-wrapper" class="load-screen">
+    <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+    </div>
+</div>
 <!--End Loading Screen-->
 
 <!--Start NavBar-->
@@ -68,6 +64,8 @@
     <button type="submit" class="btn btn-primary" id="addMovie">Submit</button>
 </form>
 <!--End Input form-->
+
+<div id="movie-list"></div>
 
 <!--Allow users to add new movies-->
 <!--Todo: Create a form for adding a new movie that has fields for the movie's title and rating-->
