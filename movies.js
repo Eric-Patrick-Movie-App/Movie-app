@@ -18,12 +18,15 @@ $(document).ready(function () {
 				let output = ''
 				for (let i = 0; i < data.length; i++) {
 					output += `
-						<div class="card col-3">
+						<div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 m-2">
 							<div class="container">
-							<h3>${data[i].title}</h3>
-							<p>${data[i].year}</p>
-							<p>${data[i].rating}</p>
-							<button type="button">Remove</button>
+								<div>
+									<img src="https://placeimg.com/200/250/any" alt="placeholder" class="mt-4">
+								</div>
+								<h3>${data[i].title}</h3>
+								<p>${data[i].year}</p>
+								<p>${data[i].rating}</p>
+								<button type="button" id="remove-btn" class="my-2">Remove</button>
 							</div>
 						</div>
 					`
@@ -39,6 +42,6 @@ $(document).ready(function () {
 
 
 	$(window).on("load", function () {
-		$("#loader-wrapper").fadeOut(5000)
+		$("#loader-wrapper").delay(3000).fadeOut(5000)
 	})
 })
