@@ -18,6 +18,25 @@ body {
     margin: 5px 30px 5px 30px;
     background-color: beige;
 }
+
+
+.movie-list-container{
+    margin: 20px 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*.wrapper {*/
 /*    width: 200px;*/
 /*    height: 60px;*/

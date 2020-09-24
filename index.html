@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,17 @@
     <script src="movies.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="card.css">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous">
+
+    <!--Font Awesome & -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <!--KEYS-->
+    <script src="movie-keys.js"></script>
 </head>
 <body>
 
@@ -39,39 +47,120 @@
 <!--End Loading Screen-->
 
 <!--Start NavBar-->
-    <nav class="navbar navbar-light bg-light navbar-container">
-        <div class="navbar-container">
-            <a class="navbar-brand" href="#">
-                <img src="movie-logo2.jpg" width="75" height="75" class="d-inline-block align-top" alt="" loading="lazy">
-                <h1>Movies Projects</h1>
-            </a>
-        </div>
-    </nav>
+<nav class="navbar navbar-light bg-light navbar-container">
+    <div class="navbar-container">
+        <a class="navbar-brand" href="#">
+            <img src="movie-logo2.jpg" width="75" height="75" class="d-inline-block align-top" alt="" loading="lazy">
+            <h1>Movies Projects</h1>
+        </a>
+    </div>
+</nav>
 
 <!--End NavBar-->
 
 <!--Start Input form-->
 <form id="add-movie-container" class="add-movie-container" method="post">
     <div class="form-group">
-        <label for="movieTitle">Movie Title</label>
-        <input type="text" class="form-control" id="movieTitle" aria-describedby="">
+        <label for="addMovieTitle">Movie Title</label>
+        <input type="text" class="form-control" id="addMovieTitle" aria-describedby="">
     </div>
     <div class="form-group">
         <label for="addMovieDate">Year released</label>
         <input type="number" class="form-control" id="addMovieDate" aria-describedby="">
     </div>
-    <label for="addMovieTitle">Example select</label>
-    <select class="form-control" id="addMovieTitle">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+    <label for="addMovieRating">Example select</label>
+    <select class="form-control" id="addMovieRating">
+        <option value="1">1 Star</option>
+        <option value="2">2 Star</option>
+        <option value="3">3 Star</option>
+        <option value="4">4 Star</option>
+        <option value="5">5 Star</option>
     </select>
     <button type="submit" class="btn btn-primary" id="addMovieBtn">Submit</button>
 </form>
 <!--End Input form-->
-<h1 id="reset"></h1>
+
+
+<!--End Delete form-->
+<form id="delete-movie-container" class="add-movie-container">
+    <div class="form-group">
+        <label for="addMovieDate">Delete Movie</label>
+        <input type="number" class="form-control" id="deleteMovie" aria-describedby="">
+    </div>
+    <button type="submit" class="btn btn-primary" id="deleteMovieBtn">Submit</button>
+</form>
+<!--End Delete form-->
+
+<!--Start Movie List-->
+<div class="movie-list-container">
+    <div id="movie-list">
+    </div>
+</div>
+
+
+
+
+<!--Sample Card-->
+<!--Start Movie List-->
+    <!--Start Movie Cards-->
+    <div class="container">
+    <div class="cellphone-container">
+        <div class="movie">
+            <div class="menu"><i class="material-icons"></i></div>
+            <!--            T-->
+            <div class="movie-img"></div>
+            <div class="text-movie-cont">
+                <div class="mr-grid">
+                    <div class="col1">
+                        <h1>`${!path.title}`</h1>
+                        <h4>`${!path.release_date}`</h4>
+                        <!--Todo:Font Size and float-->
+                        <ul class="movie-gen">
+                            <!--                            <li>PG-13  /</li>No option for Runtime or rating in the discover fetch, potential hidden value or just blind-->
+                            <!--<li>2h 49min  /</li> ditto-->
+                            <li>`${!path.genre_ids[i]}`</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mr-grid summary-row">
+                    <div class="col2">
+                        <h5>SUMMARY</h5>
+                    </div>
+                    <div class="col2">
+                        <ul class="movie-likes">
+                            <li><i class="material-icons">&#xE813;</i>`${!path.vote_average}`</li>
+                            <li><i class="material-icons">&#xE813;</i>`${!path.popularity}`</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mr-grid">
+                    <div class="col1">
+                        <p class="movie-description">`${!path.overview}`</p>
+                    </div>
+                </div>
+                <div class="mr-grid actors-row">
+                    <div class="col1">
+                        <p class="movie-actors">`${!path.character}`</p>
+                        <!--Todo:Optional Popup/icon for actors displaying info-->
+                    </div>
+                </div>
+                <div class="mr-grid action-row">
+                    <div class="col2"><div class="watch-btn"><h3><i class="material-icons">&#xE037;</i>WATCH TRAILER</h3></div>
+                        <!--Todo: How to link from {movie_id} to youtube trailer-->
+                    </div>
+                    <div class="col6 action-btn"><i class="material-icons">&#xE161;Save</i>
+                    </div>
+                    <div class="col6 action-btn"><i class="material-icons">&#xE866; Comment</i>
+                    </div>
+                    <div class="col6 action-btn"><i class="material-icons">&#xE80D;Rate</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!--Allow users to add new movies-->
 <!--Todo: Create a form for adding a new movie that has fields for the movie's title and rating-->
@@ -104,3 +193,4 @@
 <!--Optional JS-->
 </body>
 </html>
+
