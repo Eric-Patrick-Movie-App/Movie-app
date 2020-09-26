@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Website</title>
+    <!--JavaScript-->
+    <script src="jquery.js"></script>
+    <script src="movies.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="movies.css">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<!--Start Loading Screen-->
+<div id="loader-wrapper">
+    <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+    </div>
+</div>
+<!--End Loading Screen-->
+
+
+<!--Start Navbar-->
+<nav class="navbar-container">
+    <a class="navbar-brand" href="#">
+        <img src="logo.jpg" height="135" width="300" alt="logo" />
+    </a>
+</nav>
+<!--End Navbar-->
+
+
+<!--Start Main-->
+<div class="row">
+    <!--Start Menu Container-->
+    <div class="col-lg-5">
+        <!--Start Menu-->
+        <div class="m-3 menu">
+            <!--Start Tabs-->
+            <ul class="nav menu-buttons-container" id="menu-tab" role="tablist">
+                <!--Start Tab Search-->
+                <li class="nav-item menu-buttons">
+                    <a class="nav-link btn-funky-moon" id="menu-search-tab" data-toggle="pill" href="#menu-search" role="tab" aria-controls="menu-search" aria-selected="true">Search</a>
+                </li>
+                <!--End Tab Search-->
+
+                <!--Start Tab Add-->
+                <li class="nav-item menu-buttons">
+                    <a class="nav-link btn-funky-moon" id="menu-addMovie-tab" data-toggle="pill" href="#menu-add-movie" role="tab" aria-controls="menu-add-movie" aria-selected="false">Add Movie</a>
+                </li>
+                <!--End Tab Add-->
+
+                <!--Start Tab Trending-->
+                <li class="nav-item menu-buttons">
+                    <a class="nav-link btn-funky-moon" id="menu-Trending-tab" data-toggle="pill" href="#menu-trending" role="tab" aria-controls="menu-trending" aria-selected="false">Trending</a>
+                </li>
+                <!--End Tab Trending-->
+            </ul>
+            <!--End Tabs-->
+
+            <!--Start Tab Content-->
+            <div class="menu-content" id="menu-tabContent">
+                <!--Start Tab Content #Searchbar-->
+                <div class="tab-pane fade show" id="menu-search" role="tabpanel" aria-labelledby="menu-search">
+                    <section class="search-movie-container">
+                        <h1 class="title">Search</h1>
+                        <form class="search-movie-form row">
+                            <div class="form-field col-lg-12">
+                                <input id="search-title" class="input-text js-input" type="text" required>
+                                <label class="label" for="search-title">Title</label>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input class="submit-btn btn-lg btn-block" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <!--End Tab Content #Searchbar-->
+
+                <!--Start Tab Content #addMovie-->
+                <div class="tab-pane fade" id="menu-add-movie" role="tabpanel" aria-labelledby="menu-add-movie">
+                    <!--Start Movie Form-->
+                    <section class="add-movie-form">
+                        <h1 class="title">Add Movie</h1>
+                        <form class="contact-form row">
+                            <div class="form-field col-lg-6">
+                                <input id="add-title" class="input-text js-input" type="text">
+                                <label class="label" for="add-title">Title</label>
+                            </div>
+                            <div class="form-field col-lg-6">
+                                <label for="genre">Genre</label>
+                                <select class="mdb-select md-form select-box" id="genre" multiple>
+                                    <option value="1">Action</option>
+                                    <option value="2">Comedy</option>
+                                    <option value="3">Romance</option>
+                                    <option value="4">Documentary</option>
+                                    <option value="5">Adventure</option>
+                                    <option value="6">Adventure</option>
+                                </select>
+                            </div>
+                            <div class="form-field col-lg-6">
+                                <input id="add-rating" class="input-text js-input" type="text">
+                                <label class="label" for="add-rating">Rating</label>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input id="add-review" class="input-text js-input" type="text">
+                                <label class="label" for="add-review">Review</label>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input class="submit-btn btn-lg btn-block" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                    <!--End Add Movie Form-->
+                </div>
+                <!--Start Tab Content #addMovie-->
+
+                <!--Start Tab Content #Trending-->
+                <div class="tab-pane fade" id="menu-trending" role="tabpanel" aria-labelledby="menu-trending">...</div>
+                <!--Start Tab Content #Trending-->
+            </div>
+        </div>
+    </div>
+    <!--End Tab Content-->
+    <!--End Side Menu-->
+    <!--Start Movie Container-->
+    <div class="col-lg-7 movie-container">
+        <div class="movie-list-container">
+            <div id="movie-list"></div>
+        </div>
+    </div>
+    <!--End Movie Container-->
+    <!--End Main-->
+</div>
+
+<!--Optional JS-->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>

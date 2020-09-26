@@ -28,22 +28,22 @@
 <!--Todo: Make an AJAX request to get a listing of all the movies-->
 <!--Todo: When the initial AJAX request comes back, remove the "loading..." message and replace it with HTML generated from the json response your code receives-->
 <!--Start Loading Screen-->
-<!--<script>-->
-<!--	$(window).on("load", function () {-->
-<!--		$("#loader-wrapper").fadeOut("slow")-->
-<!--	})-->
-<!--</script>-->
-<!--<div id="loader-wrapper">-->
-<!--    <div class="wrapper">-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="circle"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <div class="shadow"></div>-->
-<!--        <span>Loading</span>-->
-<!--    </div>-->
-<!--</div>-->
+<script>
+	$(window).on("load", function () {
+		$("#loader-wrapper").fadeOut("slow")
+	})
+</script>
+<div id="loader-wrapper">
+    <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+    </div>
+</div>
 <!--End Loading Screen-->
 
 <!--Start NavBar-->
@@ -55,7 +55,6 @@
         </a>
     </div>
 </nav>
-
 <!--End NavBar-->
 
 <!--Start Input form-->
@@ -80,16 +79,22 @@
 </form>
 <!--End Input form-->
 
+<!--Start Main-->
+  <!--Start Guest Movie List-->
 
-<!--End Delete form-->
-<form id="delete-movie-container" class="add-movie-container">
-    <div class="form-group">
-        <label for="addMovieDate">Delete Movie</label>
-        <input type="number" class="form-control" id="deleteMovie" aria-describedby="">
-    </div>
-    <button type="submit" class="btn btn-primary" id="deleteMovieBtn">Submit</button>
-</form>
-<!--End Delete form-->
+  <!--Start Guest Movie List-->
+
+
+
+<!--&lt;!&ndash;End Delete form&ndash;&gt;-->
+<!--<form id="delete-movie-container" class="add-movie-container">-->
+<!--    <div class="form-group">-->
+<!--        <label for="addMovieDate">Delete Movie</label>-->
+<!--        <input type="number" class="form-control" id="deleteMovie" aria-describedby="">-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn btn-primary" id="deleteMovieBtn">Submit</button>-->
+<!--</form>-->
+<!--&lt;!&ndash;End Delete form&ndash;&gt;-->
 
 <!--Start Movie List-->
 <div class="movie-list-container">
@@ -98,11 +103,9 @@
 </div>
 
 
-
-
 <!--Sample Card-->
 <!--Start Movie List-->
-    <!--Start Movie Cards-->
+    <!--Start Movie Cards Example Delete Later-->
     <div class="container">
     <div class="cellphone-container">
         <div class="movie">
