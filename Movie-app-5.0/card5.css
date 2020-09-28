@@ -1,6 +1,5 @@
 /*Card Css Provided Via https://codepen.io/georgemiro/pen/oxrrwp*/
 @import "compass";
-$accent-color: #e7e7e7;
 $brand-color: #fe4141;
 $dark-color: #1e1b26;
 
@@ -31,7 +30,7 @@ body {
     z-index: 999;
 i {
     font-size: 40px;
-    color: $brand-color;
+    color: #fe4141;
     filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5));
 }
 }
@@ -151,8 +150,7 @@ https://fonts.googleapis.com/css?family=Open + Sans:400,
 800italic
 );
 
-$heading-font-family: "Montserrat", sans-serif;
-$paragraph-font-family: "Open Sans", sans-serif;
+$paragraph-font-family:
 
 $light: 300;
 $regular: 400;
@@ -171,8 +169,8 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: $heading-font-family;
-    color: $accent-color;
+    font-family: "Montserrat", sans-serif;
+    color: #e7e7e7;
     margin: 0px;
 }
 
@@ -196,7 +194,7 @@ h5 {
     margin: 0px;
     padding: 0px;
 li {
-    font-family: $paragraph-font-family;
+    font-family: "Open Sans", sans-serif;;
     font-size: $text-summary;
     color: darken($accent-color, 40%);
     width: auto;

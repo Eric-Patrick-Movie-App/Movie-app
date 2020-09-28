@@ -16,7 +16,7 @@ body {
 
 
 
-/*!*Start Media Queries*!*/
+/*Start Media Queries*/
 /*!* Small Beta Zoomer devices (phones, 600px and down) *!*/
 /*@media only screen and (max-width: 600px) {...}*/
 
@@ -32,7 +32,7 @@ body {
 /*!* Chad X-large devices (large laptops and desktops, 1200px and up) *!*/
 /*@media only screen and (min-width: 1200px) {*/
 /*}*/
-/*!*End Media Queries*!*/
+/*End Media Queries*/
 
 
 /*Start Navbar*/
@@ -44,12 +44,14 @@ body {
 }
 /*End NavBar*/
 
-/*Start Menu*/
+                                                /*Start Menu*/
+/*Start Menu Buttons*/
 .menu-buttons-container {
     width: 100%;
     display: flex;
 }
 
+/*Menu button general*/
 .menu-buttons {
     flex-grow: 1;
     text-align: center;
@@ -63,21 +65,56 @@ body {
     background: linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
 }
+/*End Menu button*/
 
+
+
+
+/*Start Menu Content*/
+/*Positions menu to stack*/
+.tab-pane {
+    position: absolute;
+}
+
+
+
+
+/*mdb-select md-form*/
+
+/*Start Add movie*/
+
+
+/*Genre Select Box*/
 .select-box {
     position: relative;
     display: block;
     width: 100%;
     margin: 0 auto;
-    font-family: "Open Sans", "Helvetica Neue", "Segoe UI", "Calibri", "Arial",
-    sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
     font-size: 18px;
     color: #60666d;
 }
 
-.add-movie-form, .search-movie-container {
+.input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+}
+
+.menu-add-movie, .search-movie-container {
     margin: 20px;
 }
+
 .add-movie-form .title, .search-movie-container .title{
     text-align: center;
     text-transform: uppercase;
@@ -144,6 +181,7 @@ body {
 
 
 /*Staging Branch*/
+
 
 
 

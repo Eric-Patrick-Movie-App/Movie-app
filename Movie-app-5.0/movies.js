@@ -1,5 +1,6 @@
 $(document).ready(function () {
-	const url = 'https://chrome-locrian-pickle.glitch.me/movies';
+	const url = 'https://nettle-miniature-secure.glitch.me/movies';
+
 	const movieList = $('#movie-list');
 
 	//Load Screen
@@ -9,32 +10,67 @@ $(document).ready(function () {
 
 	// $('.mdb-select').materialSelect();
 
-
 	fetch(url)
 			.then(response => response.json())
-			.catch(error => console.log(error))
-			// .then(data => console.log(data))
+			.then(data => console.log(data))
 			.then(data => {
-				let movieCard = ''
+				let movieCard = ``;
 				for (let i = 0; i < data.length; i++) {
-					movieCard += `<div class="card bg-secondary text-white p-3 my-3">
-    							    	 <div class="col">
-      										 <input type="submit" onclick="test()" value="Delete">
-									         <h1>Title: ${data[i].title}</h1>
-									 	  		 <h4>Rating: ${data[i].rating}</h4>
-									 	  		 <h4>Rating: ${data[i].date}</h4>
-													 <p class="id">${data[i].id}</p>
-									 			 </div>
-												</div>`;
+					//Add movie card
+					movieCard += `<div class="container">
+                          <div class="cellphone-container">
+                            <div class="movie">
+                              <div class="menu"><i class="material-icons">x</i></div>
+                                <div class="movie-img"></div>
+                                  <div class="text-movie-cont">
+                                    <div class="mr-grid">
+                                      <div class="col1">
+                                        <h1>${data[i].title}</h1>
+                                        <h4>${data[i].date}</h4>
+                                        <ul class="movie-gen">
+                                          <li>${data[i].mpa}</li>
+                                          <li>${data[i].runtime}</li>
+                                          <li>${data[i].genre}</li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    <div class="mr-grid summary-row">
+                                      <div class="col2">
+                                        <h5>SUMMARY</h5>
+                                      </div>
+                                      <div class="col2">
+                                      <ul class="movie-likes">
+                                        <li><i class="material-icons">&#xE813;</i>${data.rating}</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <div class="mr-grid">
+                                    <div class="col1">
+                                      <p class="movie-description">${data[i].overview}</p>
+                                    </div>
+                                  </div>
+                                  <div class="mr-grid actors-row">
+                                    <div class="col1">
+                                      <p class="movie-actors">${data[i].review}</p>
+                                    </div>
+                                    <div class="col1">
+                                      <p class="movie-description">${data[i].rating}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+			                    </div>`;
 				}
 				movieList.append(movieCard);
 			})
 			.catch(error => console.error(error));
 
+
 //Button
 // 	$("#addMovieBtn").click(function () {
 // 		getAddMovie();
-		// alert("Success: Added your movie to the list.");
+	// alert("Success: Added your movie to the list.");
 	// });
 //
 // //Retrieves values of user input
@@ -93,9 +129,6 @@ $(document).ready(function () {
 // }
 // $('form button').on("click",function(e){
 // 	e.preventDefault();
-
-
-
 
 
 	// var alertRedInput = "#8C1010";
