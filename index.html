@@ -1,169 +1,264 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Movie Website</title>
     <!--JavaScript-->
     <script src="jquery.js"></script>
-    <script src="movies.js"></script>
+    <script src="index.js"></script>
     <!--CSS-->
-    <link rel="stylesheet" href="movies.css">
-    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="index.css">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous">
-
-    <!--Font Awesome & -->
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
-    <!--KEYS-->
-    <script src="movie-keys.js"></script>
+
 </head>
 <body>
 
-<!--On page load:-->
-<!--Todo: Display a "loading..." message-->
-<!--Todo: Make an AJAX request to get a listing of all the movies-->
-<!--Todo: When the initial AJAX request comes back, remove the "loading..." message and replace it with HTML generated from the json response your code receives-->
-<!--Start Loading Screen-->
-<script>
-	$(window).on("load", function () {
-		$("#loader-wrapper").fadeOut("slow")
-	})
-</script>
-<div id="loader-wrapper">
-    <div class="wrapper">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <span>Loading</span>
-    </div>
-</div>
-<!--End Loading Screen-->
+<!-- LOADING DOTS... -->
 
-<!--Start NavBar-->
-<nav class="navbar navbar-light bg-light navbar-container">
-    <div class="navbar-container">
-        <a class="navbar-brand" href="#">
-            <img src="movie-logo2.jpg" width="75" height="75" class="d-inline-block align-top" alt="" loading="lazy">
-            <h1>Movies Projects</h1>
-        </a>
-    </div>
+
+
+<!--Start Navbar-->
+<nav class="navbar-container">
+    <a class="navbar-brand" href="#">
+        <img src="logo.jpg" height="135" width="300" alt="logo" />
+    </a>
 </nav>
-<!--End NavBar-->
+<!--End Navbar-->
 
-<!--Start Input form-->
-<form id="add-movie-container" class="add-movie-container" method="post">
-    <div class="form-group">
-        <label for="addMovieTitle">Movie Title</label>
-        <input type="text" class="form-control" id="addMovieTitle" aria-describedby="">
-    </div>
-    <div class="form-group">
-        <label for="addMovieDate">Year released</label>
-        <input type="number" class="form-control" id="addMovieDate" aria-describedby="">
-    </div>
-    <label for="addMovieRating">Example select</label>
-    <select class="form-control" id="addMovieRating">
-        <option value="1">1 Star</option>
-        <option value="2">2 Star</option>
-        <option value="3">3 Star</option>
-        <option value="4">4 Star</option>
-        <option value="5">5 Star</option>
-    </select>
-    <button type="submit" class="btn btn-primary" id="addMovieBtn">Submit</button>
-</form>
-<!--End Input form-->
 
 <!--Start Main-->
-  <!--Start Guest Movie List-->
+<div class="row">
+    <!--Start Menu Container-->
+    <div class="col-lg-5">
+        <!--Start Menu-->
+        <div class="m-3 menu">
+            <!--Start Tabs-->
+            <ul class="nav menu-buttons-container" id="menu-tab" role="tablist">
+                <!--Start Tab Search-->
+                <li class="nav-item menu-buttons">
+                    <a class="nav-link btn-funky-moon" id="menu-search-tab" data-toggle="pill" href="#menu-search" role="tab" aria-controls="menu-search" aria-selected="true">Search</a>
+                </li>
+                <!--End Tab Search-->
 
-  <!--Start Guest Movie List-->
+                <!--Start Tab Add-->
+                <li class="nav-item menu-buttons">
+                    <a class="nav-link btn-funky-moon" id="menu-addMovie-tab" data-toggle="pill" href="#menu-add-movie" role="tab" aria-controls="menu-add-movie" aria-selected="false">Add Movie</a>
+                </li>
+                <!--End Tab Add-->
+            </ul>
+            <!--End Tabs-->
 
+            <!--Start Tab Content-->
+            <div class="menu-content" id="menu-tabContent">
+                <!--Start Tab Content #Searchbar-->
+                <div class="tab-pane fade" id="menu-search" role="tabpanel" aria-labelledby="menu-search">
+                    <section class="search-movie-container">
+                        <h1 class="title">Search</h1>
+                        <form class="search-movie-form">
+                            <div class="form-field">
+                                <input id="search-title" class="input-text js-input" type="text">
+                                <label class="label" for="search-title">Title</label>
+                            </div>
+                            <div class="form-field">
+                                <input class="submit-btn btn-lg btn-block" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <!--End Tab Content #Searchbar-->
+                <!--Todo: Full width of menu-->
+                <!--Todo: Add select for genre-->
 
-
-<!--&lt;!&ndash;End Delete form&ndash;&gt;-->
-<!--<form id="delete-movie-container" class="add-movie-container">-->
-<!--    <div class="form-group">-->
-<!--        <label for="addMovieDate">Delete Movie</label>-->
-<!--        <input type="number" class="form-control" id="deleteMovie" aria-describedby="">-->
-<!--    </div>-->
-<!--    <button type="submit" class="btn btn-primary" id="deleteMovieBtn">Submit</button>-->
-<!--</form>-->
-<!--&lt;!&ndash;End Delete form&ndash;&gt;-->
-
-<!--Start Movie List-->
-<div class="movie-list-container">
-    <div id="movie-list">
+                <!--Start Tab Content #addMovie-->
+                <div class="tab-pane fade" id="menu-add-movie" role="tabpanel" aria-labelledby="menu-add-movie">
+                    <!--Start Movie Form-->
+                    <section class="add-movie-form">
+                        <h1 class="title">Add Movie</h1>
+                        <form class="contact-form row">
+                            <!--Add Title-->
+                            <div class="form-field col-lg-12">
+                                <input id="addMovieTitle" class="input-text js-input" type="text">
+                                <label class="label" for="addMovieTitle">Title</label>
+                            </div>
+                            <!--Add Release Date-->
+                            <div class="form-field col-lg-6">
+                                <input id="addMovieDate" class="input-text js-input" type="number" placeholder="Year">
+                                <label class="label" for="addMovieDate">Date</label>
+                            </div>
+                            <!--Add Runtime-->
+                            <div class="form-field col-lg-6">
+                                <input id="addMovieTime" class="input-text js-input" type="number" placeholder="Minutes">
+                                <label class="label" for="addMovieTime">Date</label>
+                            </div>
+                            <!--Add MPA-->
+                            <div class="form-field col-lg-6">
+                                <label for="addMovieMPA" class="label">MPA</label>
+                                <select class="mdb-select md-form select-style" id="addMovieMPA">
+                                    <option value="G" class="input-text">G</option>
+                                    <option value="PG" class="input-text">PG</option>
+                                    <option value="PG-13" class="input-text">PG-13</option>
+                                    <option value="R" class="input-text">R</option>
+                                    <option value="M" class="input-text">M</option>
+                                </select>
+                            </div>
+                            <!--Add Genre-->
+                            <div class="form-field col-lg-6">
+                                <label for="addMovieRating" class="label">Genre</label>
+                                <select class="mdb-select md-form select-style" id="addMovieGenre">
+                                    <option value="Action" class="input-text">Action</option>
+                                    <option value="Comedy" class="input-text">Comedy</option>
+                                    <option value="Romance" class="input-text">Romance</option>
+                                    <option value="Documentary" class="input-text">Documentary</option>
+                                    <option value="Adventure" class="input-text">Adventure</option>
+                                </select>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <label class="label" for="addMovieReview">Review</label>
+                                <textarea id="addMovieReview" name="w3review" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="form-field col-lg-6">
+                                <label for="addMovieRating" class="label">Genre</label>
+                                <select class="mdb-select md-form select-style" id="addMovieRating">
+                                    <option value="1" class="input-text">1 Star</option>
+                                    <option value="2" class="input-text">2 Star</option>
+                                    <option value="3" class="input-text">3 Stat</option>
+                                    <option value="4" class="input-text">4 Star</option>
+                                    <option value="5" class="input-text">5 Star</option>
+                                </select>
+                            </div>
+                            <div class="form-field col-lg-12">
+                                <input id="addMovieBtn" class="submit-btn btn-lg btn-block" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </section>
+                <!--End Add Movie Form-->
+                </div>
+                <!--Start Tab Content #addMovie-->
+            </div>
+        </div>
     </div>
+    <!--End Tab Content-->
+    <!--End Side Menu-->
+    <!--Start Movie Container-->
+    <div class="col-lg-7 movie-container">
+        <div class="movie-list-container">
+            <div id="movie-list"></div>
+        </div>
+    </div>
+    <!--End Movie Container-->
+    <!--End Main-->
 </div>
 
-
-<!--Sample Card-->
-<!--Start Movie List-->
-    <!--Start Movie Cards Example Delete Later-->
-    <div class="container">
-    <div class="cellphone-container">
-        <div class="movie">
-            <div class="menu"><i class="material-icons"></i></div>
-            <!--            T-->
-            <div class="movie-img"></div>
-            <div class="text-movie-cont">
-                <div class="mr-grid">
-                    <div class="col1">
-                        <h1>`${!path.title}`</h1>
-                        <h4>`${!path.release_date}`</h4>
-                        <!--Todo:Font Size and float-->
-                        <ul class="movie-gen">
-                            <!--                            <li>PG-13  /</li>No option for Runtime or rating in the discover fetch, potential hidden value or just blind-->
-                            <!--<li>2h 49min  /</li> ditto-->
-                            <li>`${!path.genre_ids[i]}`</li>
-                        </ul>
+                                            <!--Start Edit Modal-->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Movie</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="editMovieTitle" class="col-form-label">Title</label>
+                        <input type="text" class="form-control" id="editMovieTitle">
                     </div>
-                </div>
-                <div class="mr-grid summary-row">
-                    <div class="col2">
-                        <h5>SUMMARY</h5>
+                    <div class="form-group">
+                        <label for="editMovieDate" class="col-form-label">Release Date</label>
+                        <input type="text" class="form-control" id="editMovieDate" placeholder="Year">
                     </div>
-                    <div class="col2">
-                        <ul class="movie-likes">
-                            <li><i class="material-icons">&#xE813;</i>`${!path.vote_average}`</li>
-                            <li><i class="material-icons">&#xE813;</i>`${!path.popularity}`</li>
-                        </ul>
+                    <div class="form-group">
+                        <label for="editMovieTime" class="col-form-label">Runtime</label>
+                        <input type="text" class="form-control" id="editMovieTime" placeholder="Minutes">
                     </div>
-                </div>
-                <div class="mr-grid">
-                    <div class="col1">
-                        <p class="movie-description">`${!path.overview}`</p>
+                    <div class="form-group">
+                        <label for="editMovieMPA" class="label">Genre</label>
+                        <select class="mdb-select md-form" id="editMovieMPA">
+                            <option value="G">G</option>
+                            <option value="PG">PG</option>
+                            <option value="PG-13">PG-13</option>
+                            <option value="R">R</option>
+                            <option value="M">M</option>
+                        </select>
+                    <div class="form-group">
+                        <label for="editMovieGenre" class="label">Genre</label>
+                        <select class="mdb-select md-form select-style" id="editMovieGenre">
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Documentary">Documentary</option>
+                            <option value="Adventure">Adventure</option>
+                        </select>
                     </div>
-                </div>
-                <div class="mr-grid actors-row">
-                    <div class="col1">
-                        <p class="movie-actors">`${!path.character}`</p>
-                        <!--Todo:Optional Popup/icon for actors displaying info-->
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Review</label>
+                        <textarea class="form-control" id="message-text"></textarea>
                     </div>
-                </div>
-                <div class="mr-grid action-row">
-                    <div class="col2"><div class="watch-btn"><h3><i class="material-icons">&#xE037;</i>WATCH TRAILER</h3></div>
-                        <!--Todo: How to link from {movie_id} to youtube trailer-->
+                    <div class="form-group">
+                        <label for="editMovieRating" class="label">Genre</label>
+                        <select class="mdb-select md-form" id="editMovieRating">
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Star</option>
+                            <option value="3">3 Stat</option>
+                            <option value="4">4 Star</option>
+                            <option value="5">5 Star</option>
+                        </select>
                     </div>
-                    <div class="col6 action-btn"><i class="material-icons">&#xE161;Save</i>
                     </div>
-                    <div class="col6 action-btn"><i class="material-icons">&#xE866; Comment</i>
-                    </div>
-                    <div class="col6 action-btn"><i class="material-icons">&#xE80D;Rate</i>
-                    </div>
-                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 
 
+
+<form>
+    <hr>
+    <h4 class="text-dark">Choose One Of Our Signature Coffees!</h4>
+    <label for="roast-selection" class="d-flex justify-content-center"></label>
+    <select id="roast-selection" class="btn btn-dark">
+        <option class="text-primary">All</option>
+        <option class="text-primary">light</option>
+        <option class="text-primary">medium</option>
+        <option class="text-primary">dark</option>
+    </select>
+    <br><br>
+    <input class="coffee-search text-primary" type="text" id="myInput"
+           placeholder="Search for Coffee.."
+           title="Type in a name">
+    <input id="submit" type="submit" class="btn btn-dark"/>
+</form>
+<script>
+
+</script>
+
+                                        <!--Start Edit Modal-->
+
+
+<!--Todo:Create a form for adding a new movie that has fields for the movie's title and rating-->
+<!--Todo:When the form is submitted, the page should not reload / refresh, instead, your javascript should make a POST request to /movies with the information the user put into the form-->
+
+<!--Optional JS-->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
 
 <!--Allow users to add new movies-->
 <!--Todo: Create a form for adding a new movie that has fields for the movie's title and rating-->
@@ -192,8 +287,3 @@
 <!--can specify what movie we want to change by referencing it's id. When a new movie is created (i.e. when you send a POST request to /movies with a title and a rating), the server will respond with the-->
 <!--movie object that was created, including a generated id.-->
 <!--Take a look at the other branches in this repository, as they have configuration/setup for common scenarios, such as including bootstrap in your application.-->
-
-<!--Optional JS-->
-</body>
-</html>
-
